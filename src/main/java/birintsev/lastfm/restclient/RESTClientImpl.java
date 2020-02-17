@@ -6,8 +6,6 @@ import lombok.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -34,6 +32,6 @@ public class RESTClientImpl implements RESTClient {
     public Album searchAlbum(String artistName, String albumName) throws Exception {
         HttpRequest httpRequest = HttpRequest.newBuilder(APIRootURL.toURI()).GET().build();
         HttpResponse<String> response = client.send(httpRequest, HttpResponse.BodyHandlers.ofString());
-        return albumService.parseAlbum(response);
+        return albumService.searchAlbum(response);
     }
 }

@@ -3,6 +3,7 @@ package birintsev.lastfm;
 import birintsev.lastfm.restclient.RESTClient;
 import birintsev.lastfm.restclient.RESTClientImpl;
 import birintsev.lastfm.services.AlbumService;
+import birintsev.lastfm.services.impl.AlbumServiceImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,8 +67,10 @@ public class LastfmApplication {
         return httpClient;
     }
 
-    @Bean(name = "AlbumService")
+    @Bean(name = "AlbumServiceHttp")
     public AlbumService albumService() {
-        // todo
+        AlbumService albumService = new AlbumServiceImpl();
+
+        return albumService;
     }
 }
