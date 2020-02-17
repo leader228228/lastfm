@@ -5,10 +5,6 @@ import birintsev.lastfm.restclient.RESTClient;
 import birintsev.lastfm.services.AlbumService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.util.DefaultUriBuilderFactory;
-import org.springframework.web.util.UriBuilder;
-import org.springframework.web.util.UriBuilderFactory;
-
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.time.Duration;
