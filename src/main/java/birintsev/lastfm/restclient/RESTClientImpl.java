@@ -26,12 +26,11 @@ public class RESTClientImpl implements RESTClient {
     private URL APIRootURL;
     private HttpClient client;
     private AlbumService albumService;
+    private String dataFormat;
     private static final Logger LOGGER = LogManager.getLogger(RESTClientImpl.class);
 
     @Override
     public Album searchAlbum(String artistName, String albumName) throws Exception {
-        HttpRequest httpRequest = HttpRequest.newBuilder(APIRootURL.toURI()).GET().build();
-        HttpResponse<String> response = client.send(httpRequest, HttpResponse.BodyHandlers.ofString());
-        return albumService.searchAlbum(response);
+        return albumService.searchAlbum(artistName,albumName);
     }
 }

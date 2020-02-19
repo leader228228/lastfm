@@ -36,6 +36,7 @@ public class LastfmApplication {
      @Value("${lastfm.sharedsecret}") String sharedSecret,
      @Value("${lastfm.appname}") String appName,
      @Value("${lastfm.api.url.root}") String APIRootURL,
+     @Value("${lastfm.dataformat}") String dataFormat,
      @Autowired HttpClient httpClient,
      @Autowired AlbumService albumService) throws MalformedURLException {
         URL _APIRootURL = new URL(APIRootURL);
